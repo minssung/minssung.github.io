@@ -1,41 +1,18 @@
 import * as React from "react"
 import type { HeadFC } from "gatsby"
-import { Helmet } from 'react-helmet'
-import styled from 'styled-components';
-import GlobalStyle from "../styles/GlobalStyle";
-
-const Header = styled.div`
-  width: 100%;
-  height: 100px;
-  display: flex;
-  background-color: aliceblue;
-`
+import Layout from '../components/layout';
 
 const IndexPage = ({ data, location }: {
   data: unknown,
   location: unknown,
 }) => {
-  console.log(data)
-  console.log(location)
   return (
-    <>
-      <GlobalStyle />
-      <Header />
-      <main>
-        content
-      </main>
-    </>
+    <Layout>
+      content
+    </Layout>
   )
 }
 
 export default IndexPage
 
-export const Head: HeadFC = () => (
-  <Helmet>
-    <title>minssung's blog</title>
-    <meta
-      name="blog"
-      content="programming diary"
-    />
-  </Helmet>
-)
+export const Head: HeadFC = () => <title>minssung's blog</title>
