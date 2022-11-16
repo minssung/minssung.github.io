@@ -1,3 +1,4 @@
+import path from "path";
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
@@ -36,6 +37,11 @@ const config: GatsbyConfig = {
         },
       ],
     }
+  }, {
+    resolve: 'gatsby-plugin-root-import',
+    options: {
+      root: path.join(__dirname, 'src'),
+    },
   }]
 };
 
