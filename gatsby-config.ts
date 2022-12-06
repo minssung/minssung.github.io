@@ -37,11 +37,6 @@ const config: GatsbyConfig = {
         },
       ],
     }
-  }, {
-    resolve: 'gatsby-plugin-root-import',
-    options: {
-      root: path.join(__dirname, 'src'),
-    },
   }]
 };
 
