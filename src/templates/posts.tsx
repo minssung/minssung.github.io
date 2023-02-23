@@ -4,7 +4,7 @@ import React from 'react';
 export default function Posts() {
   const data = useStaticQuery(graphql`
     query PostQuery {
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
         edges {
           node {
             excerpt(pruneLength: 250)
