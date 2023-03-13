@@ -14,8 +14,11 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
   });
 };
 
-// export const onCreatePage: GatsbyNode['createPages'] = async ({ actions, graphql, reporter }) => {
-exports.createPages = async ({ actions, graphql, reporter }) => {
+export const createPages: GatsbyNode['createPages'] = async ({
+  actions,
+  graphql,
+  reporter,
+}) => {
   const { createPage } = actions;
 
   const result: { data?: any; errors?: any } = await graphql(`
