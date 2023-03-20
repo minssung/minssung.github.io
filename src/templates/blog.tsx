@@ -4,7 +4,14 @@ import Helmet from 'react-helmet';
 
 interface Query {
   data: {
-    markdownRemark: any;
+    markdownRemark: {
+      frontmatter: {
+        data: string;
+        path: string;
+        title: string;
+      };
+      html: string;
+    };
   };
 }
 

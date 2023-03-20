@@ -1,8 +1,24 @@
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import React from 'react';
 
+interface PostQuery {
+  allMarkdownRemark: {
+    edges: {
+      node: {
+        id: string;
+        excerpt: string;
+        frontmatter: {
+          date: string;
+          title: string;
+          path: string;
+        };
+      };
+    }[];
+  };
+}
+
 export default function Posts() {
-  const data = useStaticQuery(graphql`
+  const data: PostQuery = useStaticQuery(graphql`
     query PostQuery {
       allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
         edges {
@@ -21,7 +37,6 @@ export default function Posts() {
   `);
 
   const { edges: posts } = data.allMarkdownRemark;
-  console.log('posts.tsx data', data);
   return (
     <div className="blog-posts">
       {posts
