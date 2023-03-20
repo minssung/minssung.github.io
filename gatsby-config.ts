@@ -16,9 +16,28 @@ const config: GatsbyConfig = {
     'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-mdx',
-    'gatsby-transformer-remark',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-vscode',
+            options: {
+              theme: 'Dark+ (default dark)',
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/blog`,
+        name: `blog`,
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
