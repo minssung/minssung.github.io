@@ -6,22 +6,14 @@ title: 'Blog Post'
 
 My first blog post!
 
-```tsx
+```tsx {numberLines}
 <div>new typography!</div>
 ```
 
 - tsx 사용법
 
-<div>
-    new typography!
-</div>
-
-- [ ] ㅇㅇ
-
-  - [ ] ㅇ
-
-> 새로운
+> ### blockquote
 >
 > ---
 >
-> ### header3
+> example

@@ -1,6 +1,5 @@
-import { GatsbyNode } from 'gatsby';
-import { createFilePath } from 'gatsby-source-filesystem';
 import path from 'path';
+import { GatsbyNode } from 'gatsby';
 
 export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
   actions,
@@ -15,16 +14,16 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
   });
 };
 
-// export const onCreatePage: GatsbyNode['createPages'] = async ({ actions, graphql, reporter }) => {
-exports.createPages = async ({ actions, graphql, reporter }) => {
+export const createPages: GatsbyNode['createPages'] = async ({
+  actions,
+  graphql,
+  reporter,
+}) => {
   const { createPage } = actions;
 
   const result: { data?: any; errors?: any } = await graphql(`
-    {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
+    query GetPages {
+      allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
         edges {
           node {
             frontmatter {

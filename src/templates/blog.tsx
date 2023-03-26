@@ -4,7 +4,14 @@ import Helmet from 'react-helmet';
 
 interface Query {
   data: {
-    markdownRemark: any;
+    markdownRemark: {
+      frontmatter: {
+        data: string;
+        path: string;
+        title: string;
+      };
+      html: string;
+    };
   };
 }
 
@@ -26,13 +33,13 @@ export default function Template({ data }: Query) {
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
+  query ($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
-        path
         date(formatString: "MMMM DD, YYYY")
         title
+        path
       }
     }
   }
