@@ -1,1 +1,2 @@
-### [https://minssung.github.io](https://minssung.github.io)
+##### Blog URL
+[min.log](https://minssung.github.io)
