@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
+import Layout from '@components/layout';
 
 interface Query {
   data: {
@@ -19,16 +20,16 @@ export default function Template({ data }: Query) {
   const { markdownRemark: post } = data;
 
   return (
-    <div className="blog-post-container">
+    <Layout>
       <Helmet title={`Your Blog Name - ${post.frontmatter.title}`} />
       <div className="blog-post">
-        <h1>{post.frontmatter.title}</h1>
+        <h2>{post.frontmatter.title}</h2>
         <div
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </div>
-    </div>
+    </Layout>
   );
 }
 

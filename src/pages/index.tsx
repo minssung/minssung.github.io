@@ -1,16 +1,18 @@
 import * as React from 'react';
 import { graphql, HeadFC } from 'gatsby';
-import Layout from '../components/layout';
+import Layout from '@components/layout';
 import Posts from '../templates/posts';
 
-interface HomePageQuery {
-  data: {
-    site: {
-      siteMetadata: {
-        title: string;
-      };
+interface SiteQuery {
+  site: {
+    siteMetadata: {
+      title: string;
     };
   };
+}
+
+interface HomePageQuery {
+  data: SiteQuery;
   location: {
     hash: string;
     host: string;
@@ -41,4 +43,7 @@ export const query = graphql`
   }
 `;
 
-export const Head: HeadFC = () => <title>minssung's blog</title>;
+export const Head: HeadFC<SiteQuery> = (props) => {
+  const { title } = props.data.site.siteMetadata;
+  return <title>{title}</title>;
+};
