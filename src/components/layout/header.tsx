@@ -8,15 +8,8 @@ const StyledHeader = styled.div`
   align-items: center;
   height: 80px;
   background-color: aliceblue;
-  padding: 20px;
+  padding: 5px 20px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-`;
-
-const Profile = styled.img`
-  width: 60px;
-  height: 60px;
-  border: 1px solid gray;
-  border-radius: 50%;
 `;
 
 const IconButton = styled.button`
@@ -50,25 +43,23 @@ const Header = () => {
             alignItems: 'center',
           }}
         >
-          <Profile src={'/images/profile.png'} alt={'profile'} />
-
           <div
             style={{
               marginLeft: '20px',
             }}
           >
-            <h2>Minsung's Blog</h2>
+            <h3>min.log</h3>
           </div>
         </div>
 
         <div>
           <IconButton onClick={() => alert('구현 준비중입니다.')}>
-            <DarkMode width={30} height={30} />
+            <DarkMode width={24} height={24} />
           </IconButton>
           <IconButton
             onClick={() => window.open('https://github.com/minssung', '_blank')}
           >
-            <Github width={30} height={30} />
+            <Github width={24} height={24} />
           </IconButton>
         </div>
       </div>
