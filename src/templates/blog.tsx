@@ -21,7 +21,16 @@ export default function Template({ data }: Query) {
 
   return (
     <Layout>
-      <Helmet title={`Your Blog Name - ${post.frontmatter.title}`} />
+      <Helmet
+        title={`min.log - ${post.frontmatter.title}`}
+        meta={[
+          { name: 'description', content: '모든 게 내 맘대로 블로그' },
+          { name: 'keywords', content: '블로그, 일상, 개발, 프로그래밍' },
+          { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+          { property: 'og:title', content: `${post.frontmatter.title}` },
+          { property: 'og:description', content: '모든 게 내 맘대로 블로그' },
+        ]}
+      />
       <div className="blog-post">
         <h2>{post.frontmatter.title}</h2>
         <div
