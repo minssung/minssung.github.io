@@ -4,6 +4,11 @@ body {
   margin: 0;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 blockquote {
   border: 1px solid #27a9e3;
   margin-left: 0px;
