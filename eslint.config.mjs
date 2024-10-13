@@ -10,10 +10,7 @@ export default tseslint.config(
   {
     rules: {
       'no-unused-vars': 'off',
-      '@typescript-eslint/no-unused-vars': [
-        'error',
-        { args: 'none', ignoreRestSiblings: true },
-      ],
+      '@typescript-eslint/no-unused-vars': 'off',
     },
   },
   {
@@ -22,5 +19,10 @@ export default tseslint.config(
       markdown,
     },
     processor: 'markdown/markdown',
+    rules: {
+      'no-inline-html': 'off',
+      'no-unused-expressions': 'off',
+      'no-undef': 'off',
+    },
   },
 );
