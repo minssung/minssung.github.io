@@ -25,3 +25,9 @@ blockquote {
   width: 100%;
   max-width: 600px;
 }
+
+#caption {
+  font-size: 0.8rem;
+  color: #666;
+  text-align: center;
+}
