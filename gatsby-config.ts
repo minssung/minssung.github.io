@@ -28,6 +28,12 @@ const config: GatsbyConfig = {
               theme: 'Dark+ (default dark)',
             },
           },
+          {
+            resolve: 'gatsby-remark-copy-linked-files',
+            options: {
+              ignoreFileExtensions: [],
+            },
+          },
         ],
       },
     },
