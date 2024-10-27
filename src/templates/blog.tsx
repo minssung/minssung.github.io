@@ -29,6 +29,15 @@ export default function Template({ data }: Query) {
           { name: 'viewport', content: 'width=device-width, initial-scale=1' },
           { property: 'og:title', content: `${post.frontmatter.title}` },
           { property: 'og:description', content: '모든 게 내 맘대로 블로그' },
+          { property: 'og:type', content: 'website' },
+          {
+            property: 'og:url',
+            content: `https://minssung.github.io${post.frontmatter.path}`,
+          },
+          {
+            property: 'og:image',
+            content: 'https://minssung.github.io/favicon.ico',
+          },
         ]}
       />
       <div className="blog-post">
