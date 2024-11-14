@@ -4,6 +4,8 @@ import type { GatsbyConfig } from 'gatsby';
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `min.log`,
+    description: `미래의 나를 위한 기록, 개발자로서의 여정, 읽는이들에겐 도움을`,
+    image: `/favicon.ico`,
     siteUrl: `https://minssung.github.io`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
