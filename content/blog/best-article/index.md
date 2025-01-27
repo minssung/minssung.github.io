@@ -2,6 +2,8 @@
 path: '/what-is-best-article'
 date: 2024-11-24
 title: '좋은 글이란 무엇인가에 대한 고찰'
+thumbnail: './best-article.png'
+tags: ['글쓰기', '고찰']
 ---
 
 > 본 글은 ‘나’라는 독자를 위해 작성된 글로, 평어로 작성되어 있습니다.

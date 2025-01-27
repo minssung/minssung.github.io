@@ -4,25 +4,27 @@ import { useSiteMetadata } from '../../hooks/useSiteMetadata';
 export const SEO = ({
   title,
   description,
+  image,
   pathname,
   children,
 }: {
   title?: string;
   description?: string;
+  image?: string;
   pathname?: string;
   children?: React.ReactNode;
 }) => {
   const {
     title: defaultTitle,
     description: defaultDescription,
-    image,
+    image: defaultImage,
     siteUrl,
   } = useSiteMetadata();
 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: `${siteUrl}${image}`,
+    image: `${siteUrl}${image || defaultImage}`,
     url: `${siteUrl}${pathname || ``}`,
   };
 

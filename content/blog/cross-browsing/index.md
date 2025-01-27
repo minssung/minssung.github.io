@@ -2,6 +2,8 @@
 path: '/cross-browsing'
 date: 2024-10-27
 title: '크로스 브라우징 이슈와 함께 보는 replaceAll 메서드'
+thumbnail: './crossbrowsing.png'
+tags: ['크로스 브라우징', 'replaceAll']
 ---
 
 #### 크로스 브라우징이란 뭘까요?

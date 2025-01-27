@@ -2,6 +2,8 @@
 path: '/fe-copilot'
 date: 2025-01-19
 title: 'FE 생태계의 코파일럿 활용기'
+thumbnail: './fe-copilot-intro.png'
+tags: ['Frontend', 'Github Copilot', 'AI']
 ---
 
 ### Github Copilot

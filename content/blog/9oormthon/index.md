@@ -2,6 +2,8 @@
 path: '/9oormthon'
 date: 2024-11-10
 title: '구름톤 11기 후기 - 프론트엔드'
+thumbnail: './9oormthon.png'
+tags: ['프론트엔드', '해커톤', '구름톤', '후기']
 ---
 
 ![구름톤 11기](./9oormthon.png)

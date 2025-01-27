@@ -2,6 +2,8 @@
 path: '/restrospective-2024'
 date: 2025-01-05
 title: '도전적인 2024년 회고'
+thumbnail: './restrospective-2024-thumbnail.png'
+tags: ['회고', '운동', '리더', '여행', '컨퍼런스', '글또']
 ---
 
 > 본 글은 ‘나’라는 독자를 위해 작성된 글로, 평어로 작성되어 있습니다.

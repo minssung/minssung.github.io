@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import Layout from '@components/layout';
 import { SEO } from '@components/seo';
 
@@ -10,6 +11,11 @@ interface Query {
         data: string;
         path: string;
         title: string;
+        thumbnail: {
+          childImageSharp: {
+            gatsbyImageData: IGatsbyImageData;
+          };
+        };
       };
       html: string;
       excerpt: string;
@@ -17,12 +23,33 @@ interface Query {
   };
 }
 
+export const defaultThumbnail: IGatsbyImageData = {
+  layout: 'constrained',
+  width: 600,
+  height: 30,
+  images: {
+    fallback: {
+      src: '',
+      srcSet: '',
+      sizes: '',
+    },
+    sources: [],
+  },
+};
+
 export default function Template({ data }: Query) {
   const { markdownRemark: post } = data;
+
+  const thumbnail =
+    getImage(post.frontmatter.thumbnail?.childImageSharp?.gatsbyImageData) ??
+    defaultThumbnail;
+
+  console.log('thumbnail', thumbnail);
 
   return (
     <Layout>
       <div className="blog-post">
+        {/* <GatsbyImage image={thumbnail} alt={post.frontmatter.title} /> */}
         <h2>{post.frontmatter.title}</h2>
         <div
           className="blog-post-content"
@@ -42,6 +69,11 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         path
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(width: 600)
+          }
+        }
       }
     }
   }
@@ -49,5 +81,15 @@ export const pageQuery = graphql`
 
 export const Head = ({ data }: Query) => {
   const { markdownRemark: post } = data;
-  return <SEO title={post.frontmatter.title} description={post.excerpt} />;
+
+  return (
+    <SEO
+      title={post.frontmatter.title}
+      description={post.excerpt}
+      image={
+        post.frontmatter.thumbnail.childImageSharp?.gatsbyImageData.images
+          ?.fallback?.src
+      }
+    />
+  );
 };

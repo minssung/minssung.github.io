@@ -1,5 +1,9 @@
 import { graphql, Link, useStaticQuery } from 'gatsby';
+import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import React from 'react';
+import { defaultThumbnail } from './blog';
+import { Tag } from '@components/tag';
+import { PostCard } from '@components/card';
 
 interface PostQuery {
   allMarkdownRemark: {
@@ -11,6 +15,12 @@ interface PostQuery {
           date: string;
           title: string;
           path: string;
+          thumbnail: {
+            childImageSharp: {
+              gatsbyImageData: IGatsbyImageData;
+            };
+          };
+          tags: string[];
         };
       };
     }[];
@@ -23,12 +33,18 @@ export default function Posts() {
       allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
         edges {
           node {
-            excerpt(pruneLength: 250)
+            excerpt(pruneLength: 200)
             id
             frontmatter {
               title
               date(formatString: "MMMM DD, YYYY")
               path
+              thumbnail {
+                childImageSharp {
+                  gatsbyImageData(width: 600)
+                }
+              }
+              tags
             }
           }
         }
@@ -37,19 +53,36 @@ export default function Posts() {
   `);
 
   const { edges: posts } = data.allMarkdownRemark;
+
   return (
-    <div className="blog-posts">
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+        gap: '1.5rem',
+      }}
+    >
       {posts
         .filter((post) => post.node.frontmatter.title.length > 0)
         .map(({ node: post }) => {
+          const thumbnail =
+            getImage(
+              post.frontmatter.thumbnail?.childImageSharp?.gatsbyImageData,
+            ) ?? defaultThumbnail;
+
           return (
-            <div className="blog-post-preview" key={post.id}>
-              <h2>
-                <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-              </h2>
-              <h3>{post.frontmatter.date}</h3>
-              <p>{post.excerpt}</p>
-            </div>
+            <Link
+              key={post.id}
+              to={post.frontmatter.path}
+              style={{ textDecoration: 'none' }}
+            >
+              <PostCard
+                title={post.frontmatter.title}
+                date={post.frontmatter.date}
+                tags={post.frontmatter.tags}
+                image={thumbnail}
+              />
+            </Link>
           );
         })}
     </div>
