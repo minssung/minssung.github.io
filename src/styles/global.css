@@ -18,6 +18,46 @@ blockquote {
   border-left: 10px solid #27a9e3;
 }
 
+p {
+  line-height: 1.6;
+}
+
+p + #caption {
+  margin-top: -1rem;
+}
+
+h3 {
+  margin-top: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+code:not(:has(*)) {
+  background-color: #f4f4f4;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* 테두리가 겹치지 않도록 함 */
+}
+
+th {
+  border: 1px solid gray;
+  padding: 6px;
+  text-align: left;
+}
+
+td {
+  border: 1px solid gray;
+  padding: 4px;
+}
+
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 #___gatsby {
   display: flex;
   justify-content: center;

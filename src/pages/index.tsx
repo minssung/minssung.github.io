@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { graphql, HeadFC } from 'gatsby';
 import Layout from '@components/layout';
 import Posts from '../templates/posts';
+import { SEO } from '@components/seo';
 
 interface SiteQuery {
   site: {
@@ -29,21 +29,11 @@ interface HomePageQuery {
 }
 
 export default ({ data, location }: HomePageQuery) => {
-  // console.log('index data', data);
-  return <Layout>{Posts()}</Layout>;
+  return (
+    <Layout>
+      <Posts />
+    </Layout>
+  );
 };
 
-export const query = graphql`
-  query HomePageQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`;
-
-export const Head: HeadFC<SiteQuery> = (props) => {
-  const { title } = props.data.site.siteMetadata;
-  return <title>{title}</title>;
-};
+export const Head = () => <SEO />;
