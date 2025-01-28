@@ -9,10 +9,11 @@ const StyledHeader = styled.div`
   align-items: center;
   height: 80px;
   padding: 5px 20px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: ${({ theme }) => `0 0 4px ${theme.boxShadowColor}`};
 `;
 
 const IconButton = styled.button`
+  color: ${({ theme }) => theme.text};
   padding: 8px;
   background-color: transparent;
   border: none;
@@ -32,13 +33,13 @@ const StyledLink = styled(Link)`
   color: inherit;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 16px;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: ${({ theme }) => theme.gray};
   padding: 5px 10px;
   transition: all 0.2s ease-in-out;
   &:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: ${({ theme }) => theme.gray};
     transform: translateY(-1px);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: ${({ theme }) => `0 0 8px ${theme.boxShadowColor}`};
   }
   &:active {
     transform: translateY(0);
@@ -46,7 +47,13 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const Header = () => {
+const Header = ({
+  theme,
+  toggleTheme,
+}: {
+  theme: 'light' | 'dark';
+  toggleTheme: () => void;
+}) => {
   return (
     <StyledHeader>
       <div
@@ -73,8 +80,12 @@ const Header = () => {
         </div>
 
         <div>
-          <IconButton onClick={() => alert('구현 준비중입니다.')}>
-            <DarkMode width={24} height={24} />
+          <IconButton onClick={toggleTheme}>
+            {theme === 'light' ? (
+              <DarkMode width={24} height={24} />
+            ) : (
+              <LightMode width={24} height={24} />
+            )}
           </IconButton>
           <IconButton
             onClick={() => window.open('https://github.com/minssung', '_blank')}

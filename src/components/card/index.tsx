@@ -4,15 +4,14 @@ import styled from 'styled-components';
 import { Tag } from '@components/tag';
 
 const StyledCard = styled.div`
-  background: white;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: ${({ theme }) => `0 2px 4px ${theme.boxShadowColor}`};
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: ${({ theme }) => `0 4px 8px ${theme.boxShadowColor}`};
   }
 `;
 
@@ -32,7 +31,6 @@ const Content = styled.div`
 const Title = styled.h2`
   font-size: 1.5rem;
   margin: 0 0 0.5rem 0;
-  color: #1a1a1a;
 `;
 
 const DateText = styled.p`

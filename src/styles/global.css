@@ -1,7 +1,6 @@
 body {
   height: 100vh;
   font-family: 'Noto Sans KR', sans-serif;
-  background-color: #fef7f7;
   margin: 0;
 }
 
@@ -27,6 +26,12 @@ p + #caption {
   margin-top: -1rem;
 }
 
+/* 아티클 제목 */
+h2 {
+  margin-top: 0;
+}
+
+/* 아티클 소제목 */
 h3 {
   margin-top: 2rem;
   margin-bottom: 1.25rem;
@@ -37,9 +42,11 @@ a {
 }
 
 code:not(:has(*)) {
-  background-color: #f4f4f4;
-  padding: 0.2rem 0.4rem;
+  color: #c7254e;
+  background-color: #d4d4d4;
+  padding: 0.1rem 0.3rem;
   border-radius: 3px;
+  font-size: 0.9em;
 }
 
 table {

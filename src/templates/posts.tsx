@@ -74,7 +74,7 @@ export default function Posts() {
             <Link
               key={post.id}
               to={post.frontmatter.path}
-              style={{ textDecoration: 'none' }}
+              style={{ color: 'inherit' }}
             >
               <PostCard
                 title={post.frontmatter.title}
