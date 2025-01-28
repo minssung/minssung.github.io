@@ -1,6 +1,7 @@
 body {
   height: 100vh;
   font-family: 'Noto Sans KR', sans-serif;
+  background-color: #fef7f7;
   margin: 0;
 }
 
@@ -29,6 +30,10 @@ p + #caption {
 h3 {
   margin-top: 2rem;
   margin-bottom: 1.25rem;
+}
+
+a {
+  text-decoration: none;
 }
 
 code:not(:has(*)) {

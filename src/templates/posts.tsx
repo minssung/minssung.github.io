@@ -1,9 +1,9 @@
-import { graphql, Link, useStaticQuery } from 'gatsby';
-import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import React from 'react';
-import { defaultThumbnail } from './blog';
-import { Tag } from '@components/tag';
+import { graphql, Link, useStaticQuery } from 'gatsby';
+import { getImage, IGatsbyImageData } from 'gatsby-plugin-image';
+
 import { PostCard } from '@components/card';
+import { defaultThumbnail } from './blog';
 
 interface PostQuery {
   allMarkdownRemark: {

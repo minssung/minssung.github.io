@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
+
 import Layout from '@components/layout';
 import { SEO } from '@components/seo';
 
@@ -40,16 +41,9 @@ export const defaultThumbnail: IGatsbyImageData = {
 export default function Template({ data }: Query) {
   const { markdownRemark: post } = data;
 
-  const thumbnail =
-    getImage(post.frontmatter.thumbnail?.childImageSharp?.gatsbyImageData) ??
-    defaultThumbnail;
-
-  console.log('thumbnail', thumbnail);
-
   return (
     <Layout>
       <div className="blog-post">
-        {/* <GatsbyImage image={thumbnail} alt={post.frontmatter.title} /> */}
         <h2>{post.frontmatter.title}</h2>
         <div
           className="blog-post-content"
