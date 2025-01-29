@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Github } from 'styled-icons/boxicons-logos';
 import { LightMode, DarkMode } from 'styled-icons/material-outlined';
 
-import { getTheme, toggleTheme } from '@utils/theme';
+import { getTheme as getInitialTheme, toggleTheme } from '@utils/theme';
 
 const StyledHeader = styled.div`
   display: flex;
@@ -15,7 +15,7 @@ const StyledHeader = styled.div`
 `;
 
 const IconButton = styled.button`
-  color: ${({ theme }) => theme.text};
+  color: var(--text-color);
   padding: 8px;
   background-color: transparent;
   border: none;
@@ -50,7 +50,12 @@ const StyledLink = styled(Link)`
 `;
 
 const Header = () => {
-  const theme = getTheme();
+  const [theme, setTheme] = React.useState(getInitialTheme());
+
+  const toggleThemeState = () => {
+    toggleTheme();
+    setTheme(getInitialTheme());
+  };
 
   return (
     <StyledHeader>
@@ -78,7 +83,7 @@ const Header = () => {
         </div>
 
         <div>
-          <IconButton onClick={toggleTheme}>
+          <IconButton onClick={toggleThemeState}>
             {theme === 'light' ? (
               <DarkMode width={24} height={24} />
             ) : (
