@@ -42,13 +42,12 @@
 }
 
 body {
-  height: 100vh;
-
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: 'Noto Sans KR', sans-serif;
-  margin: 0;
 
+  font-family: 'Noto Sans KR', sans-serif;
+
+  margin: 0;
   transition: background-color 0.2s, color 0.2s;
 }
 

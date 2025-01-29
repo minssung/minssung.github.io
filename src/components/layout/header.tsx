@@ -9,9 +9,14 @@ import { getTheme as getInitialTheme, toggleTheme } from '@utils/theme';
 const StyledHeader = styled.div`
   display: flex;
   align-items: center;
-  height: 80px;
-  padding: 5px 20px;
+  padding: 12px 20px;
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-color);
   box-shadow: 0 0 4px var(--box-shadow-color);
+  opacity: 0.9;
+  z-index: 100;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 `;
 
 const IconButton = styled.button`
