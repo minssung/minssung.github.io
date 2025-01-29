@@ -2,6 +2,7 @@
   --bg-color: #fef7f7;
   --text-color: #000000;
   --blockquote-border: #27a9e3;
+  --blockquote-bg: #f8fcff;
   --link-color: #0066cc;
 
   --logo-bg-color: #efefef;
@@ -13,6 +14,7 @@
   --bg-color: #222;
   --text-color: #ddd;
   --blockquote-border: #1a8fc7;
+  --blockquote-bg: #1a1a1a;
   --link-color: #66b3ff;
 
   --logo-bg-color: #333;
@@ -36,12 +38,31 @@ img {
 }
 
 blockquote {
-  border: 1px solid #27a9e3;
-  margin-left: 0px;
-  margin-right: 0px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-left: 10px solid #27a9e3;
+  background-color: var(--blockquote-bg);
+  border: none;
+  border-left: 5px solid var(--blockquote-border);
+  margin: 1.5em 0;
+  padding: 1.5em 2em;
+  position: relative;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 4px rgba(39, 169, 227, 0.1);
+  transition: all 0.3s ease;
+}
+
+blockquote::before {
+  content: '"';
+  font-family: Georgia, serif;
+  font-size: 4em;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+  color: rgba(39, 169, 227, 0.2);
+}
+
+blockquote:hover {
+  transform: translateX(5px);
+  background-color: var(--blockquote-bg);
+  box-shadow: 0 4px 8px rgba(39, 169, 227, 0.15);
 }
 
 p {
@@ -64,6 +85,7 @@ h3 {
 }
 
 a {
+  color: var(--link-color);
   text-decoration: none;
 }
 
