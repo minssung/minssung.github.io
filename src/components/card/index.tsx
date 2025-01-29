@@ -71,13 +71,13 @@ export const PostCard = ({
       <Content>
         <Title>{title}</Title>
         <DateText>{formattedDate}</DateText>
-        {tags?.length > 0 ? (
+        {/* {tags?.length > 0 ? (
           <TagList>
             {tags.map((tag) => (
               <Tag key={tag} tag={tag} />
             ))}
           </TagList>
-        ) : null}
+        ) : null} */}
       </Content>
     </StyledCard>
   );
