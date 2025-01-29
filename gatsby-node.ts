@@ -9,6 +9,8 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
     resolve: {
       alias: {
         '@components': path.resolve(__dirname, 'src/components'),
+        '@hooks': path.resolve(__dirname, 'src/hooks'),
+        '@utils': path.resolve(__dirname, 'src/utils'),
       },
     },
   });
@@ -21,7 +23,24 @@ export const createPages: GatsbyNode['createPages'] = async ({
 }) => {
   const { createPage } = actions;
 
-  const result: { data?: any; errors?: any } = await graphql(`
+  interface QueryResult {
+    data?: {
+      allMarkdownRemark: {
+        edges: Array<{
+          node: {
+            frontmatter: {
+              path: string;
+            };
+          };
+        }>;
+      };
+    };
+    errors?: Array<{
+      message: string;
+    }>;
+  }
+
+  const result: QueryResult = await graphql(`
     query GetPages {
       allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
         edges {
@@ -41,8 +60,8 @@ export const createPages: GatsbyNode['createPages'] = async ({
   }
 
   const blogPostTemplate = path.resolve(`src/templates/blog.tsx`);
-  const posts = result.data.allMarkdownRemark.edges;
-  posts.forEach(({ node }: any) => {
+  const posts = result?.data?.allMarkdownRemark?.edges || [];
+  posts.forEach(({ node }: { node: { frontmatter: { path: string } } }) => {
     const path = node.frontmatter.path;
     createPage({
       path,
