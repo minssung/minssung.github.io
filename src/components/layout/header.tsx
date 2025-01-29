@@ -4,12 +4,14 @@ import styled from 'styled-components';
 import { Github } from 'styled-icons/boxicons-logos';
 import { LightMode, DarkMode } from 'styled-icons/material-outlined';
 
+import { getTheme, toggleTheme } from '@utils/theme';
+
 const StyledHeader = styled.div`
   display: flex;
   align-items: center;
   height: 80px;
   padding: 5px 20px;
-  box-shadow: ${({ theme }) => `0 0 4px ${theme.boxShadowColor}`};
+  box-shadow: 0 0 4px var(--box-shadow-color);
 `;
 
 const IconButton = styled.button`
@@ -33,13 +35,13 @@ const StyledLink = styled(Link)`
   color: inherit;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 16px;
-  background-color: ${({ theme }) => theme.gray};
+  background-color: var(--logo-bg-color);
   padding: 5px 10px;
   transition: all 0.2s ease-in-out;
   &:hover {
-    background-color: ${({ theme }) => theme.gray};
+    background-color: var(--logo-bg-color);
     transform: translateY(-1px);
-    box-shadow: ${({ theme }) => `0 0 8px ${theme.boxShadowColor}`};
+    box-shadow: 0 0 8px var(--box-shadow-color);
   }
   &:active {
     transform: translateY(0);
@@ -47,13 +49,9 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const Header = ({
-  theme,
-  toggleTheme,
-}: {
-  theme: 'light' | 'dark';
-  toggleTheme: () => void;
-}) => {
+const Header = () => {
+  const theme = getTheme();
+
   return (
     <StyledHeader>
       <div

@@ -5,13 +5,13 @@ import { Tag } from '@components/tag';
 
 const StyledCard = styled.div`
   border-radius: 16px;
-  box-shadow: ${({ theme }) => `0 2px 4px ${theme.boxShadowColor}`};
+  box-shadow: 0 2px 4px var(--box-shadow-color);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: ${({ theme }) => `0 4px 8px ${theme.boxShadowColor}`};
+    box-shadow: 0 4px 8px var(--box-shadow-color);
   }
 `;
 
