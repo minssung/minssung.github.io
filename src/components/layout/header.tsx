@@ -24,7 +24,7 @@ const IconButton = styled.button`
   user-select: none;
   transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   &:hover {
-    background-color: rgba(0, 0, 0, 0.04);
+    background-color: var(--dimmed-light-color);
     transition: 0.3s;
   }
 `;

@@ -1,24 +1,44 @@
 :root {
+  /* Common */
   --bg-color: #fef7f7;
   --text-color: #000000;
+
+  /* Dimmed */
+  --dimmed-light-color: #f0f0f0;
+  --dimmed-dark-color: #333;
+
+  /* Elements */
   --blockquote-border: #27a9e3;
   --blockquote-bg: #f8fcff;
   --link-color: #0066cc;
 
-  --logo-bg-color: #efefef;
+  /* Styling */
   --box-shadow-color: rgba(0, 0, 0, 0.2);
+
+  /* Components */
+  --logo-bg-color: #efefef;
 }
 
 /* Dark theme overrides */
 [data-theme='dark'] {
+  /* Common */
   --bg-color: #222;
   --text-color: #ddd;
+
+  /* Dimmed */
+  --dimmed-light-color: #333;
+  --dimmed-dark-color: #ccc;
+
+  /* Elements */
   --blockquote-border: #1a8fc7;
   --blockquote-bg: #1a1a1a;
   --link-color: #66b3ff;
 
-  --logo-bg-color: #333;
+  /* Styling */
   --box-shadow-color: rgba(255, 255, 255, 0.8);
+
+  /* Components */
+  --logo-bg-color: #333;
 }
 
 body {
