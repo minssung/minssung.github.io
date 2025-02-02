@@ -25,6 +25,14 @@ const config: GatsbyConfig = {
       options: {
         plugins: [
           {
+            resolve: 'gatsby-remark-images',
+            options: {
+              linkImagesToOriginal: true,
+              maxWidth: 600,
+              quality: 100,
+            },
+          },
+          {
             resolve: 'gatsby-remark-vscode',
             options: {
               theme: 'Dark+ (default dark)',
