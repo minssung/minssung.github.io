@@ -81,8 +81,8 @@ export const Head = ({ data }: Query) => {
       title={post.frontmatter.title}
       description={post.excerpt}
       image={
-        post.frontmatter.thumbnail.childImageSharp?.gatsbyImageData.images
-          ?.fallback?.src
+        post.frontmatter.thumbnail?.childImageSharp?.gatsbyImageData?.images
+          ?.fallback?.src ?? ''
       }
     />
   );
