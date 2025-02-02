@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.7"/><meta name="description" content="문제 웹 브라우저에서는 focus와 blur…" data-gatsby-head="true"/><meta name="image" content="https://minssung.github.io/static/cbd83fbd551416c554deb051dbe86880/d543a/webview-focus-react-toastify.png" data-gatsby-head="true"/><meta name="twitter:card" content="summary_large_image" data-gatsby-head="true"/><meta name="twitter:title" content="웹뷰에서 포커스를 감지하고 싶어요 - react-toastify 활용" data-gatsby-head="true"/><meta name="twitter:url" content="https://minssung.github.io" data-gatsby-head="true"/><meta name="twitter:description" content="문제 웹 브라우저에서는 focus와 blur…" data-gatsby-head="true"/><meta name="twitter:image" content="https://minssung.github.io/static/cbd83fbd551416c554deb051dbe86880/d543a/webview-focus-react-toastify.png" data-gatsby-head="true"/><meta property="og:title" content="웹뷰에서 포커스를 감지하고 싶어요 - react-toastify 활용" data-gatsby-head="true"/><meta property="og:url" content="https://minssung.github.io" data-gatsby-head="true"/><meta property="og:description" content="문제 웹 브라우저에서는 focus와 blur…" data-gatsby-head="true"/><meta property="og:image" content="https://minssung.github.io/static/cbd83fbd551416c554deb051dbe86880/d543a/webview-focus-react-toastify.png" data-gatsby-head="true"/><meta property="og:type" content="article" data-gatsby-head="true"/><meta property="og:site_name" content="min.log" data-gatsby-head="true"/><style data-href="/styles.4b4561f49b84196dc5e6.css" data-identity="gatsby-global-css">:root{--bg-color:#fef7f7;--text-color:#000;--dimmed-light-color:#f0f0f0;--dimmed-dark-color:#333;--blockquote-border:#27a9e3;--blockquote-bg:#f8fcff;--link-color:#06c;--box-shadow-color:rgba(0,0,0,.2);--logo-bg-color:#efefef}[data-theme=dark]{--bg-color:#222;--text-color:#ddd;--dimmed-light-color:#333;--dimmed-dark-color:#ccc;--blockquote-border:#1a8fc7;--blockquote-bg:#1a1a1a;--link-color:#66b3ff;--box-shadow-color:hsla(0,0%,100%,.8);--logo-bg-color:#333}body{background-color:var(--bg-color);color:var(--text-color);font-family:Noto Sans KR,sans-serif;margin:0;transition:background-color .2s,color .2s}img{height:auto;max-width:100%}blockquote{background-color:var(--blockquote-bg);border:none;border-left:5px solid var(--blockquote-border);border-radius:0 8px 8px 0;box-shadow:0 2px 4px rgba(39,169,227,.1);margin:1.5em 0;padding:1.5em 2em;position:relative;transition:all .3s ease}blockquote:before{color:rgba(39,169,227,.2);content:'"';font-family:Georgia,serif;font-size:4em;left:10px;position:absolute;top:-10px}blockquote:hover{background-color:var(--blockquote-bg);box-shadow:0 4px 8px rgba(39,169,227,.15);transform:translateX(5px)}p{line-height:1.6}p+#caption{margin-top:-1rem}h2{margin-top:0}h3{margin-bottom:1.25rem;margin-top:2rem}a{color:var(--link-color);text-decoration:none}code:not(:has(*)){background-color:#d4d4d4;border-radius:3px;color:#c7254e;font-size:.9em;padding:.1rem .3rem}table{border-collapse:collapse;width:100%}th{padding:6px;text-align:left}td,th{border:1px solid gray}td{padding:4px}hr{margin-bottom:2rem;margin-top:2rem}#___gatsby{display:flex;height:100%;justify-content:center}#gatsby-focus-wrapper{display:flex;flex-direction:column;max-width:600px;width:100%}#caption{color:#666;font-size:.8rem;text-align:center}</style><style data-styled="" data-styled-version="6.1.13">.hQYLxw{display:inline-block;vertical-align:middle;overflow:hidden;}/*!sc*/
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.7"/><meta name="description" content="문제 웹 브라우저에서는 focus와 blur…" data-gatsby-head="true"/><meta name="image" content="https://minssung.github.io/static/cbd83fbd551416c554deb051dbe86880/d543a/webview-focus-react-toastify.png" data-gatsby-head="true"/><meta name="twitter:card" content="summary_large_image" data-gatsby-head="true"/><meta name="twitter:title" content="웹뷰에서 포커스를 감지하고 싶어요 - react-toastify 활용" data-gatsby-head="true"/><meta name="twitter:url" content="https://minssung.github.io" data-gatsby-head="true"/><meta name="twitter:description" content="문제 웹 브라우저에서는 focus와 blur…" data-gatsby-head="true"/><meta name="twitter:image" content="https://minssung.github.io/static/cbd83fbd551416c554deb051dbe86880/d543a/webview-focus-react-toastify.png" data-gatsby-head="true"/><meta property="og:title" content="웹뷰에서 포커스를 감지하고 싶어요 - react-toastify 활용" data-gatsby-head="true"/><meta property="og:url" content="https://minssung.github.io" data-gatsby-head="true"/><meta property="og:description" content="문제 웹 브라우저에서는 focus와 blur…" data-gatsby-head="true"/><meta property="og:image" content="https://minssung.github.io/static/cbd83fbd551416c554deb051dbe86880/d543a/webview-focus-react-toastify.png" data-gatsby-head="true"/><meta property="og:type" content="article" data-gatsby-head="true"/><meta property="og:site_name" content="min.log" data-gatsby-head="true"/><style data-href="/styles.f6914afa0e373b0e1f4e.css" data-identity="gatsby-global-css">:root{--bg-color:#fef7f7;--text-color:#000;--dimmed-light-color:#f0f0f0;--dimmed-dark-color:#333;--blockquote-border:#27a9e3;--blockquote-bg:#f8fcff;--link-color:#06c;--box-shadow-color:rgba(0,0,0,.2);--logo-bg-color:#efefef}[data-theme=dark]{--bg-color:#222;--text-color:#ddd;--dimmed-light-color:#333;--dimmed-dark-color:#ccc;--blockquote-border:#1a8fc7;--blockquote-bg:#1a1a1a;--link-color:#66b3ff;--box-shadow-color:hsla(0,0%,100%,.8);--logo-bg-color:#333}body{background-color:var(--bg-color);color:var(--text-color);font-family:Noto Sans KR,sans-serif;margin:0;transition:background-color .2s,color .2s}img{height:auto;max-width:100%}blockquote{background-color:var(--blockquote-bg);border:none;border-left:5px solid var(--blockquote-border);border-radius:0 8px 8px 0;box-shadow:0 2px 4px rgba(39,169,227,.1);margin:1.5em 0;padding:1.5em 2em;position:relative;transition:all .3s ease}blockquote:before{color:rgba(39,169,227,.2);content:'"';font-family:Georgia,serif;font-size:4em;left:10px;position:absolute;top:-10px}blockquote:hover{background-color:var(--blockquote-bg);box-shadow:0 4px 8px rgba(39,169,227,.15);transform:translateX(5px)}p{line-height:1.6}p img{display:flex;justify-self:center}p+#caption{margin-top:-1rem}h2{margin-top:0}h3{margin-bottom:1.25rem;margin-top:2rem}a{color:var(--link-color);text-decoration:none}code:not(:has(*)){background-color:#d4d4d4;border-radius:3px;color:#c7254e;font-size:.9em;padding:.1rem .3rem}table{border-collapse:collapse;width:100%}th{padding:6px;text-align:left}td,th{border:1px solid gray}td{padding:4px}hr{margin-bottom:2rem;margin-top:2rem}#___gatsby{display:flex;height:100%;justify-content:center}#gatsby-focus-wrapper{display:flex;flex-direction:column;max-width:600px;width:100%}#caption{color:#666;font-size:.8rem;text-align:center}</style><style data-styled="" data-styled-version="6.1.13">.hQYLxw{display:inline-block;vertical-align:middle;overflow:hidden;}/*!sc*/
 data-styled.g1[id="StyledIconBase-sc-ea9ulj-0"]{content:"hQYLxw,"}/*!sc*/
 .jfXrfb{display:flex;align-items:center;padding:12px 20px;position:sticky;top:0;background-color:var(--bg-color);box-shadow:0 0 4px var(--box-shadow-color);opacity:0.9;z-index:100;transition:background-color 0.3s cubic-bezier(0.4,0,0.2,1) 0ms;}/*!sc*/
 data-styled.g2[id="header__StyledHeader-sc-1k96c9s-0"]{content:"jfXrfb,"}/*!sc*/
@@ -31,7 +31,38 @@ data-styled.g5[id="layout__Main-sc-wcovtc-0"]{content:"coBtgC,"}/*!sc*/
           })()
         </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="header__StyledHeader-sc-1k96c9s-0 jfXrfb"><div style="display:flex;justify-content:space-between;align-items:center;width:100%"><div style="display:flex;align-items:center"><a class="header__StyledLink-sc-1k96c9s-2 icbpJb" href="/"><img src="/favicon.ico" style="width:24px;height:24px;border-radius:16px"/><h3 style="margin:0;margin-left:4px">min.log</h3></a></div><div><button class="header__IconButton-sc-1k96c9s-1 gTAlhq"><svg viewBox="0 0 24 24" height="24" width="24" aria-hidden="true" focusable="false" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="StyledIconBase-sc-ea9ulj-0 hQYLxw"><path d="M9.37 5.51A7.35 7.35 0 0 0 9.1 7.5c0 4.08 3.32 7.4 7.4 7.4.68 0 1.35-.09 1.99-.27A7.014 7.014 0 0 1 12 19c-3.86 0-7-3.14-7-7 0-2.93 1.81-5.45 4.37-6.49zM12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"></path></svg></button><button class="header__IconButton-sc-1k96c9s-1 gTAlhq"><svg viewBox="0 0 24 24" height="24" width="24" aria-hidden="true" focusable="false" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="StyledIconBase-sc-ea9ulj-0 hQYLxw"><path fill-rule="evenodd" d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z" clip-rule="evenodd"></path></svg></button></div></div></div><main class="layout__Main-sc-wcovtc-0 coBtgC"><div class="blog-post"><h2>웹뷰에서 포커스를 감지하고 싶어요 - react-toastify 활용</h2><div class="blog-post-content"><h3>문제</h3>
 <p>웹 브라우저에서는 <code>focus</code>와 <code>blur</code> 이벤트를 통해 포커스를 감지할 수 있습니다. 안드로이드 웹뷰에서도 이런 이벤트를 사용할 수 있을까요? 웹뷰에서 포커스를 감지하기 위해 고민했던 이야기를 공유합니다.</p>
-<p><img src="/501568a4c96259a7490e24cbeac075fc/webview-focus-sequence.png" alt="웹뷰 포커스 시퀀스"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 600px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/501568a4c96259a7490e24cbeac075fc/70841/webview-focus-sequence.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 42.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAACDElEQVR42mNgQAL19fVM9fv3s4DwqlWrmO3t7TksLCw4QTg0NJQTJM9ACHTv/M9df+Y/V/Gi59z19VfYkOUsLS3FzHV0xM3NncT9w/1lewtDOf///8/EADGYEYpRQem8Bz9L5tx9XLLi8evM/Q92ZZx8UZx1/FnN0jM3MoGa+YCY++XL/zz19QxYXQeUZwRZ8h/m+upVn39VL/nwsHz31/d5N778zz7//n/dox//H71+9e/61au/Hz569Hf/+TkfF+3JnrVif0HHvNPN/ZVHFzu3PNgumb5rumphb70Q1GyIa4Njssz9vCLMQyeuso/a/6gkaOu1osLD92qev3h+5vat29devHx+/cSTvh87rlX/P/aw/v/a72v/N9zd9r/y1tp/S0+v/v94ct+Zl1MmznwyuX/Ow8mdUgwudnaajo6W8m4WFkIu6rImLqoSmvaSPCLBERF6UVFRdpGRkRorDhSFzt2cW7B4U1pK962lU+pubjheen/D3u07Ft75NXP6/8/zZv37uWje/+dTJ3mjxLBXfLyEa3Exdz0wTNzc3FScnJzMLF0txZTELcU0pc1VGRhkON3d3SU9XV2drOztTWYX5pjtq69P21Nfk3KoqT4EORUw4ksJIIWrVoUyg9iBga5iHk4eWv72/gJaQF9pWFlZCmppyQkaG/Nj08tIIJUxols0My2NFRzbUDkAaRHxLR/53wgAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="웹뷰 포커스 시퀀스"
+        title=""
+        src="/static/501568a4c96259a7490e24cbeac075fc/dface/webview-focus-sequence.png"
+        srcset="/static/501568a4c96259a7490e24cbeac075fc/a9205/webview-focus-sequence.png 150w,
+/static/501568a4c96259a7490e24cbeac075fc/a8a0d/webview-focus-sequence.png 300w,
+/static/501568a4c96259a7490e24cbeac075fc/dface/webview-focus-sequence.png 600w,
+/static/501568a4c96259a7490e24cbeac075fc/e7448/webview-focus-sequence.png 900w,
+/static/501568a4c96259a7490e24cbeac075fc/70841/webview-focus-sequence.png 1094w"
+        sizes="(max-width: 600px) 100vw, 600px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
 <p>웹뷰로 복귀한 뒤에 바로 포커스가 잡혀야 광고 페이지에 유저가 얼마나 머물렀는지 체크를 할 수 있는데, <code>focus</code>와 <code>blur</code> 이벤트 리스너같은 일반적인 방법을 사용해도 동작하지 않아 이건 R&#x26;D를 해야겠다는 필요성을 느꼈습니다. 우선 기본적으로 제공하는 <strong>웹 이벤트와 API</strong>를 살펴보기로 했습니다.</p>
 <h3>목차</h3>
 <ul>
@@ -43,7 +74,36 @@ data-styled.g5[id="layout__Main-sc-wcovtc-0"]{content:"coBtgC,"}/*!sc*/
 </ul>
 <h3>해결을 시도하다1 - 웹 API 사용 <a id="해결을-시도하다1"></a></h3>
 <p>웹뷰의 포커스 감지를 해야 하는 일감을 회의에서 전달받자마자, “아, <code>visibilitychange</code> 웹 API를 사용하면 되겠네!”라고 말했더니 실장님이 하시는 말씀이 “그거 쓰면 안 돼. 구버전 브라우저는 지원되지 않는 기능이야.”였습니다. 아차 싶었던 저는 바로 <strong>MDN</strong>에서 해당 이벤트의 버전 호환성을 체크했습니다.</p>
-<p><img src="/0be84cda075a595beeaf8dc4e76889a8/webview-focus-visibilitychange.png" alt="visibilitychange 웹 API 호환성"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 592px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/0be84cda075a595beeaf8dc4e76889a8/d9142/webview-focus-visibilitychange.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 68.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACJUlEQVR42nVT23LiMAzlMxjIxY6TkHDJUO4kgZRld4A27ZT9/385q2MwO0ynDxpJx9KRZMudzWaD38c/qKoK+32D9WaNxXIp9t76h8MvtJcL2o9PbMstPM9Hv9//UTqlBF0u72jbd3xIUtPssKsrnM9nfLYtrtcvfMnZ9foXb28n+L73SPY87zthYAok4xo6nSEWHQ83SCc1omwpskAkfjLZI0znGBR75NMao9krJvMGSoXo9XrPhEpHMHGKyMSiE9GJ1cSzfIThuICOjMUYF4QaodJI0gEGg4F07CMIAoRhaHWHRr/vqvSsaKXgB74kpMjzzI6piElymqbWN8ZgOBxCa40oiiwZY+6Ez/fgKvKOKM5eLBbySAcpkj9I+Hh80Ol0iiRJfiZkN46QNu+qLEsrJCbJZDJBXdfgpsxmM3sFT4RM7na7eHl5wXg8RpZlKIrCJnLE7XZrCdgNiRlDn+Sr1crGf+uQnbjR1uu1DWyaxmr6JGBBanZFTeHZg5AjOSEpqzevDfZCVN1HKqvSEh+PR1n+DVYk3+1wOp0wn88lrrJ3+yCkdqJDBSOroYIQEW2uih8gEszIOjlceTeM8coPoSS3Q1ZW3Uk1dsT2w2GMMDfw80jEIBjF8DJ5VeIinuCB4N7Y3DGxR2IbdSNcyt914/JheEDxtKyLDhDEGn4ki2v0DRObvh8re8ZYa8tZxxE9jcwx3CgibiyH3Wz1H7vj/Cn/AB5YnAtggwtbAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="visibilitychange 웹 API 호환성"
+        title=""
+        src="/static/0be84cda075a595beeaf8dc4e76889a8/d9142/webview-focus-visibilitychange.png"
+        srcset="/static/0be84cda075a595beeaf8dc4e76889a8/a9205/webview-focus-visibilitychange.png 150w,
+/static/0be84cda075a595beeaf8dc4e76889a8/a8a0d/webview-focus-visibilitychange.png 300w,
+/static/0be84cda075a595beeaf8dc4e76889a8/d9142/webview-focus-visibilitychange.png 592w"
+        sizes="(max-width: 592px) 100vw, 592px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
 <div id="caption">오 이런</div>
 <p>크롬 브라우저는 62 버전부터 지원하여 2017년도에 릴리즈된 버전으로 그나마 양호하지만, 사파리 브라우저는 14.5 버전이 2021년도 릴리즈되어 호환이 안 되는 경우가 꽤 있을 것으로 생각했습니다.</p>
 <p>과감히 다른 방식으로 해결해야겠다는 생각과 함께 몇 번 사용한 적이 있던 <code>focus</code> 웹 API로 눈을 돌렸습니다. <code>focus</code> 이벤트는 웹뷰가 아닌 웹 브라우저 기준으로 사용 경험이 있었기에 당연히 동작할 것으로 생각했습니다. 구버전에 대한 호환성 걱정도 없으니까요.</p>
@@ -52,7 +112,38 @@ data-styled.g5[id="layout__Main-sc-wcovtc-0"]{content:"coBtgC,"}/*!sc*/
 <p>이 외에도 모든 이벤트가 동작하지 않는지 의심이 들어 처음에 하려고 했던 <code>visibilitychange</code> 이벤트로 테스트해 봤더니 매우 잘 동작합니다.. focus, blur는 왜 동작하지 않는 걸까요?</p>
 <p>웹뷰 밖으로 나갔다가 다시 돌아와서 한 번의 터치를 해줘야 focus가 잡히고 있습니다. 이처럼 한 번의 터치가 있어야만 focus가 잡히는 것으로는 문제를 해결할 수 없기에 또 다른 해결 방법을 찾기로 했습니다.</p>
 <h3>해결을 시도하다2 - react-toastify 라이브러리 분석 <a id="해결을-시도하다2"></a></h3>
-<p><img src="/cbd83fbd551416c554deb051dbe86880/webview-focus-react-toastify.png" alt="react-toastify 라이브러리"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 600px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/cbd83fbd551416c554deb051dbe86880/c2fc5/webview-focus-react-toastify.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 80%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAD20lEQVR42p2UW2xUVRSG59Eng/GC0lt6n06prb0ZE3zwwQQ0Eh4UwWBQ0UhMJBhL00tagUqDpRchpTamwFgBqWAKDSNWe4FaKqFEsJQCY53STttM2+lczsycM2fmzHzuOVMx8dF98metnOz9n3+t9e9jmJ93MGmbZtK+gFNSiUQ0QuGwiFH+zzJEVAdByUpYfoCmupGdy3idS/gCXqLhCAF3ANkTICSHiEbA51WR3EEd4tvIIY0ln4xPEWKEBoPPZcO9MIHHcRePcwbV7RbkAcKhILEdmqQRlaJE5AhhNYrfG8bnUfUYDgnCcBSPEkIKhlHFfoNNlDtjm8Jmm+TOPSsut18oEwcDMh63wqLswBGaRtb8sNKFUEgVbVHRhEQtxipWNBoVFUQw9PT0UN81yFFLDyfMxzh7qYnL37Vz9HArHd9XYZn5mp99x5kN3o8fFE9EHFRkBVVVCQroZNH4e0P3xUs094xgtgzRaf6GE111dBz/kvbWNs78sI/R4V+4PjbP1T+mGLgxgdfrw+/z4XA48Hg8uEWLvCLGcp1wePR3pidFqWIQX7UfIy3JRHpKBkkJiaQ8lsDmonXs+rCBXTtb2LaxivHR27pSySuhKMpDBINBXaXhQm8/V0ZGGZ+4z6GGZkyZJnIzc0hLTCZjTSIfv/g81vJi7OUFWLc9juvmFdFPmJ+143a5cLmcQuWyUOiOE57v7WPg11Hu3bXS3NhCfuZaCnOKyEzOwPh0Iu++VML7J5/lna5sNrU+wm3rgK5wybnIstODJCYu+zUCkvCuFlPYP8zwjTs8mJ6jTQwiNyMPk7GQ1OR0sp9J4L3SYra+XMj29YVsKU1h4toQwo4siB76haWW7BGccxGWZ8X0FeHDC+e66bP8xNjNMVoONvFClol1efnkpaaTl5zCzpISPs0vpKagmL3pWUwNDxMzitfj1ZX6fJKYtvLvTekb/JHxW78xP2entfEIpsTVmNJWk/DEKpIeXcWOXBMf5WSzJ9dIWcJT/Hl5QLfj0sIiYU1DlmUdcS8KQstgL5b+i1y/NsL5k2fYW1FG7Wdl1JR/wv7du+msruZ0VSVnqyvprtiD869JVEHk9Xp0EkWRUVYmrCs8W1lB06uv0LRhPW2bNmJ+6006t27mlIinY/mW10X+BubXNnDr1LcPSWLq4rlCIBDQPagTdmx/m5q1udSK0mpNRmpyMtlnzKBO4HOBemM6DbmZHFjzJEMNB/VDwRXfxWrUBPE/6nRC8wc72F9SRF1xIQeKn6O+uIAvBA4JNAo0F+VxpFTkWalcPdwcH4QkYbfb9dvx39/X34x9/g1FXHgYAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="react-toastify 라이브러리"
+        title=""
+        src="/static/cbd83fbd551416c554deb051dbe86880/dface/webview-focus-react-toastify.png"
+        srcset="/static/cbd83fbd551416c554deb051dbe86880/a9205/webview-focus-react-toastify.png 150w,
+/static/cbd83fbd551416c554deb051dbe86880/a8a0d/webview-focus-react-toastify.png 300w,
+/static/cbd83fbd551416c554deb051dbe86880/dface/webview-focus-react-toastify.png 600w,
+/static/cbd83fbd551416c554deb051dbe86880/e7448/webview-focus-react-toastify.png 900w,
+/static/cbd83fbd551416c554deb051dbe86880/c2fc5/webview-focus-react-toastify.png 1055w"
+        sizes="(max-width: 600px) 100vw, 600px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
 <div id="caption">https://www.npmjs.com/package/react-toastify</div>
 <p>토스트 UI를 사용하기 위해 설치하여 쓰고 있었던 <code>react-toastify</code> 라이브러리가 있습니다. 그런데 신기하게도 이 라이브러리에서 제공하는 토스트는 위와 같은 포커스 문제가 발생하지 않는 것이었습니다.</p>
 <p>예시로, 토스트 노출 옵션에 <code>autoClose</code>를 3초로 걸어두고 다음과 같은 프로세스를 태웁니다.</p>
@@ -63,7 +154,38 @@ data-styled.g5[id="layout__Main-sc-wcovtc-0"]{content:"coBtgC,"}/*!sc*/
 </ol>
 <p>제가 개발 중인 웹뷰 환경이라면 토스트는 3초 후에 비노출 처리되기 때문에 5초 뒤에 웹뷰로 복귀했을 때 이미 토스트가 보이지 않아야 하지만, 5초라는 시간이 지났음에도 토스트가 유지되다가 웹뷰로 돌아옴과 동시에 토스트가 화면상에서 사라지는 모습을 보여주고 있습니다.</p>
 <p>이는 분명히 라이브러리 내부 로직으로 포커스를 감지하고 있을 것으로 생각했습니다. 그래서 오픈 소스를 제대로 분석해 본 적은 없지만 이번에는 조금 심도 있는 확인이 필요할 것이라는 생각에 깃허브 코드 스페이스를 통해 소스를 클라우드에서 가져와 확인했습니다.</p>
-<p><img src="/fe6d0f8bd203555996999fbe02a31531/webview-focus-codespace.png" alt="react-toastify 코드 스페이스"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 600px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/fe6d0f8bd203555996999fbe02a31531/5a4f3/webview-focus-codespace.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 46%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABkklEQVR42k1SSY7cMAz0/z+RY4Ac8okgf8glmEyj0z2xbNnaZW01JdkImgAhWSSLVaSnD7Hi/f6Eth79vsgdxkdYF8ab4dl9UxZCKsjdQDsPZRx2bWGZq5gnGf/9dsMk5xnLQqB1G0naWAK5AahYYC5guWmCacYJpt24b8rAx/S/aUyZgHJl8oZdKcR4oLWGhtP6vbbzKx0JNkQ8xBP35w2OuYZMD4I4vlsfkGvF1EE6g9gLyMzQA986UMoZnpISi/p3YOG3n9/x5cdXiH1FZk0tBYV5lWDdpn/zgtv9MWa3rDukDpxNl6Q4AsrXhizSYF3YKFAqqY/YQxh8SIfHYiBUJMOGSYU6hjqkXt67OUroYN07w3ZJHyNoFcJV/JIV77rir23w+YxP0lfMXIixdiR3LwQ0ZHCylsiUVdm98My5EK9A2IQ/MuEogE+V5wWoYh3rz5wDXpbhvR+D7vOMMeK4zkDvpo2B0Wo0ebVpNpmSAwOVSyjDj1SwKgdBdmI5fd32sbBVbuPX6ook39ILkQ74CWAHuCKImcDOAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="react-toastify 코드 스페이스"
+        title=""
+        src="/static/fe6d0f8bd203555996999fbe02a31531/dface/webview-focus-codespace.png"
+        srcset="/static/fe6d0f8bd203555996999fbe02a31531/a9205/webview-focus-codespace.png 150w,
+/static/fe6d0f8bd203555996999fbe02a31531/a8a0d/webview-focus-codespace.png 300w,
+/static/fe6d0f8bd203555996999fbe02a31531/dface/webview-focus-codespace.png 600w,
+/static/fe6d0f8bd203555996999fbe02a31531/e7448/webview-focus-codespace.png 900w,
+/static/fe6d0f8bd203555996999fbe02a31531/5a4f3/webview-focus-codespace.png 1052w"
+        sizes="(max-width: 600px) 100vw, 600px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
 <p><code>npm link</code>를 통해 프로젝트에서 사용 중인 <code>react-toastify</code> 대신, 코드 스페이스로 가져온 소스에서 코드를 수정하여 테스트할 수 있었습니다. 그나저나 소스 내부를 확인해 보니 역시.. 이해가 쉽지 않습니다.</p>
 <p>콘솔 로그를 남겨 확인해 보면 좋을 것 같은 메소드들에 전부 로그를 추가하여 빌드 후, 링크를 통해 라이브러리를 연결하여 실제 프로젝트에서 테스트해 보았으나, 결정적인 단서를 찾지 못했습니다.(오픈 소스는 어렵네요.ㅜㅜ)</p>
 <h3>해결을 시도하다3 - 네이티브 이벤트 활용 <a id="해결을-시도하다3"></a></h3>
@@ -78,7 +200,38 @@ data-styled.g5[id="layout__Main-sc-wcovtc-0"]{content:"coBtgC,"}/*!sc*/
 <p>또다시 <code>react-toastify</code> 라이브러리로 넘어옵니다. 이 라이브러리는 이미 이 문제를 해결한 상태입니다. 그렇다면? 토스트 UI를 활용하면 될 것입니다.</p>
 <p>포커스 감지가 필요한 시점에 포커스 추적용 토스트를 노출하고, 외부 브라우저 랜딩으로 포커스를 잃었다가 다시 웹뷰로 돌아오는 타이밍에 토스트가 비노출 처리되기 때문에 이 시점을 체크하기만 하면 됩니다.</p>
 <p>최종적으로 제가 구현한 프로세스는 다음과 같습니다.</p>
-<p><img src="/4404229de21b55753c46fe0d8ddae970/webview-focus-tracking-sequence.png" alt="웹뷰 포커스 시퀀스"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 600px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/4404229de21b55753c46fe0d8ddae970/ef0cc/webview-focus-tracking-sequence.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 42.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAACKUlEQVR42mMIDS3k9ElL4woNDWWrZ2Bg8knz4fKpT+Oyt7fnYICC//8ZGGFsCwsLzvr4eI40Hx+QGhaI/H/G/wz/IWrsLNR1nS01Dd3c3ITS0tJYnQxstKxkdUzcbW0lQfL29u4KPBIeok5OvuL19fVMIFrC0FzT0M5OE+gITh8fHxF1K3UpLVN5iUDXQDGG1J5TJem9Z+pgLsg5Ndcz5/S8mcWLirlB/NULPQwvH/dZuXOtqw6Iv78+nuNeS+O8m001XlAtLOtrjjeurzlaC+bFTHi4Orr37l6YgRGHJhRGHp7wpHBHvRCIf+2kleXD84afnpw1tQTxd5eH8r+pKHnxorIoH6ZnZ8mtHTuKb6wDczw8ovns7UN5MjMzBdMKCiS1tLTYbGxsBIHe5wKKyYLC0s3NQsjY2Jg1LS1WLiYmhttGV1dQRUWFvbO0XqqjvJxfRcWMz8XFhR8UBAz2+/+DA9Z7+51J3jvvXUybacwK4i86HBu66lz817lbopRA/OMTglTvzYr+cHlSeDg4IlatYjtfueYSEE+EBMV+kDmMoCgCx47F7D3p5ouO9kd7qPCB+M0LvOym7vBcVtzsJQ/i9+f7K5xuc1+8ttzTCcQPDXXh35c6u3976vR0BnQAcqq/trKsn4qcFtCLIpDYtecRF3flNjPz4IPxGWRCOUHBAXIJUA+/pLExl6mzqTBYDh3YA50cWr+KDVkMOf3B+Mhi4PQH9SEMAADP0r/WNm773QAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="웹뷰 포커스 시퀀스"
+        title=""
+        src="/static/4404229de21b55753c46fe0d8ddae970/dface/webview-focus-tracking-sequence.png"
+        srcset="/static/4404229de21b55753c46fe0d8ddae970/a9205/webview-focus-tracking-sequence.png 150w,
+/static/4404229de21b55753c46fe0d8ddae970/a8a0d/webview-focus-tracking-sequence.png 300w,
+/static/4404229de21b55753c46fe0d8ddae970/dface/webview-focus-tracking-sequence.png 600w,
+/static/4404229de21b55753c46fe0d8ddae970/e7448/webview-focus-tracking-sequence.png 900w,
+/static/4404229de21b55753c46fe0d8ddae970/ef0cc/webview-focus-tracking-sequence.png 962w"
+        sizes="(max-width: 600px) 100vw, 600px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
 <ol>
 <li>광고 클릭</li>
 <li>화면상에 보이지 않는 포커스 추적용 토스트 노출</li>
@@ -224,6 +377,6 @@ data-styled.g5[id="layout__Main-sc-wcovtc-0"]{content:"coBtgC,"}/*!sc*/
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-00d482944a8a7e96a6d7.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-433eae73e1bc7cb0329e.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-7cf8f28cef4c4774d0cb.js\"],\"component---src-templates-blog-tsx\":[\"/component---src-templates-blog-tsx-6f97a97649529ad47ba6.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-f28bccfafbd67add2213.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-433eae73e1bc7cb0329e.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-7be7446fbd50c2605a4e.js\"],\"component---src-templates-blog-tsx\":[\"/component---src-templates-blog-tsx-5acb11aaccae5917d3bf.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="bca005e74e69f0306d9b";</script><script src="/webpack-runtime-2746b4b7abd92b9fa00b.js" async></script><script src="/framework-0a5161e04e2410729286.js" async></script><script src="/app-00d482944a8a7e96a6d7.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="83cffdb6c672d9c9889a";</script><script src="/webpack-runtime-af6b035ab194d4be4310.js" async></script><script src="/framework-0a5161e04e2410729286.js" async></script><script src="/app-f28bccfafbd67add2213.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
