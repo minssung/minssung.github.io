@@ -88,6 +88,11 @@ p {
   line-height: 1.6;
 }
 
+p img {
+  display: flex;
+  justify-self: center;
+}
+
 p + #caption {
   margin-top: -1rem;
 }
