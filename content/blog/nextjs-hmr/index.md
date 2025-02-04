@@ -1,31 +1,27 @@
 ---
 path: '/nextjs-hmr'
 date: 2025-02-02
-title: 'Next.js를 다루며 - HMR'
+title: 'Next.js를 다루며 - HMR, Fast Refresh'
 thumbnail: './hmr-thumbnail.png'
 tags: ['Next.js', 'React', 'HMR', 'Hot Reload', 'Fast Refresh']
 ---
 
 ![HMR](./hmr-thumbnail.png)
 
-Next.js 프레임워크를 사용한지 어느덧 4년이 되어갑니다.
+Next.js를 사용한 지 어느덧 4년이 되었습니다. 이전에는 React를 클래스형 컴포넌트로 시작했고, Next.js는 v10부터 사용하여 현재는 v15까지 릴리즈되었습니다.
 
-React는 2020년도에 초기 16.x 버전으로 사용하여 함수형 컴포넌트가 아닌 클래스형 컴포넌트를 사용했었고, (componentDidMount…) 2021년부터 사용한 Next.js는 v10으로 시작하여 어느덧 지금인 2025년에는 15버전이 릴리즈되었네요.
+Next.js 개발을 하면서 코드 변경 후 즉각적인 반영이 중요한 순간이 많습니다. 특히, 복잡한 상태를 가진 페이지에서 매번 새로고침 없이 빠르게 UI를 업데이트하는 것이 중요합니다. 하지만 HMR이 예상대로 동작하지 않으면 개발 속도가 저하될 뿐만 아니라 디버깅 과정에서도 불편함이 발생합니다.
 
-이러한 글을 쓰게된 계기는 Next.js를 지금껏 사용해오면서 그간 경험을 되돌아보고 최근에 학습이 필요하다고 느낀 부분을 보충 + 저와 같은 문제를 겪고계신 분들의 피해를 덜어드리고자 입니다.
+프론트엔드 개발을 해보셨다면 HMR, Hot Reload, Fast Refresh라는 용어를 한 번쯤 들어보셨을텐데요. 이들이 조금씩 다르다는 점, 알고 계셨나요? 각각 어떻게 다른지, 그리고 실무에서 발생한 문제와 해결 방법까지 공유하려 합니다.
 
-이번 글은 여러 기능 중에서 HMR(Hot Module Replacement)에 대해 알아보고자 합니다.
-
-아마 프론트 개발을 해보신 분이라면 HMR, Hot Reload, Fast Refresh 모두 한 번씩은 들어보셨을텐데요, 각자가 조금씩 다르다는 점을 알고게셨나요? 저는 코드 업데이트 기법으로 셋 다 동일하게 사용하고 이름만 다른줄 알았습니다..
-
-먼저, 헷갈릴 수 있는 HMR, Hot Reload, Fast Refresh의 관계에 대한 정리로 시작해 보겠습니다.
 
 ### 목차
 
 - [HMR, Hot Reload, Fast Refresh](#hmr-hot-reload-fast-refresh)
-- [이들의 사례](#이들의-사례)
-- [내가 겪은 HMR 문제](#내가-겪은-hmr-문제)
+- [HMR, Hot Reload, Fast Refresh 사례](#이들의-사례)
+- [실무에서 겪은 HMR 문제](#실무에서-겪은-hmr-문제)
 - [문제 해결](#문제-해결)
+- [마무리하며](#마무리하며)
 
 ---
 
@@ -47,15 +43,15 @@ React는 2020년도에 초기 16.x 버전으로 사용하여 함수형 컴포넌
     └─ Hot Module Replacement (HMR)
          ├─ 기본 HMR
          ├─ Hot Reload
-         │   └─ (HMR을 이용하지만, 구현에 따라 상태 보존이 미흡할 수도 있음)
+         │   └─ (HMR을 활용하지만, 구현에 따라 상태 보존이 미흡할 수도 있음)
          └─ Fast Refresh
-             └─ (React/React Native에 특화되어, HMR을 개선하여 상태 보존 및 에러 회복 기능 강화)
+             └─ (React/Next.js 최적화, 상태 보존 및 에러 복구)
 
 ```
 
 이 구조에서 보듯이 Hot Reload와 Fast Refresh 모두 HMR의 개념을 활용하는 것으로 볼 수 있습니다.
 
-### 이들의 사례 <a id="이들의-사례"></a>
+### HMR, Hot Reload, Fast Refresh 사례 <a id="이들의-사례"></a>
 
 #### HMR(Hot Module Replacement)
 
@@ -77,14 +73,14 @@ root에 config 디렉토리가 추가되고, package.json에 명시된 dependenc
 
 #### Hot Reload
 
-Hot Reload는 HMR을 활용하는 초기 방식들로, HMR을 이용하되 상태 보존이 미흡할 수 있습니다.
+Hot Reload는 HMR을 기반으로 하지만, 기존 상태를 보존하는 방식이 보장되지 않습니다. 즉, 코드 변경 후 기존 상태가 유지되지 않고, 전체 컴포넌트가 다시 마운트될 수도 있습니다.
 React 개발 환경에서 과거에 사용되던 [react-hot-loader](https://github.com/gaearon/react-hot-loader)가 대표적인 예시입니다.
 
 이는 HMR 기능을 활용해 컴포넌트 변경 시 전체 리로드 없이 업데이트를 시도했지만, 때때로 컴포넌트의 내부 상태가 초기화되는 등의 한계가 있었습니다. 위 링크의 깃헙 페이지 마지막 커밋 날짜를 보면 3년 전으로, 현재는 사용하지 않는 것으로 볼 수 있겠네요.
 
 #### Fast Refresh
 
-Fast Refresh는 React와 React Native에 특화된 HMR 방식으로, Hot Reload를 개선하여 상태 보존 및 에러 회복 기능을 강화한 방식입니다. 에러 회복 기능이란? 아래 GIF를 보면 알 수 있습니다.
+Fast Refresh는 React와 Next.js에 특화된 HMR 방식으로, Hot Reload를 개선하여 상태 보존 및 에러 회복 기능을 강화한 방식입니다. 에러 회복 기능이란? 아래 GIF를 보면 알 수 있습니다.
 
 ![hmr-fast-refresh](./hmr-fast-refresh.gif)
 <div id="caption">Fast Refresh를 통한 에러 회복</div>
@@ -103,7 +99,7 @@ Next.js에서 사용되는 Fast Refresh 기능은 React의 React Refresh 기술�
 | 환경 구성 | 직접 구현 | .env 파일 핫 리로드 |
 | 에러 핸들링 | 기본 오버레이 | 향상된 디버깅 툴 |
 
-또한, Next.js에서 웹팩을 수정하는 것이 CRA보다 훨씬 간편합니다. `next.config.js` 파일에 설정을 추가하면 되는데 간단한 코드 예시를 보여드리겠습니다.
+또한, Next.js에서 웹팩을 수정하는 것이 CRA보다 훨씬 간편합니다. Next.js의 Webpack 설정을 직접 수정하려면 `next.config.js`에서 아래와 같이 설정할 수 있습니다.
 
 ```javascript
 // next.config.js
@@ -118,19 +114,20 @@ module.exports = {
 }
 ```
 
-위 코드는 [Next.js 웹팩 커스텀 공식문서](https://nextjs.org/docs/api-reference/next.config.js/custom-webpack-config)에서 가져온 예시이며, 공식문서에 자세한 설명이 있으니 필요하다면 참고하시면 좋을 것 같습니다.
+위 코드는 [Next.js 웹팩 커스텀 공식문서](https://nextjs.org/docs/api-reference/next.config.js/custom-webpack-config)에서 가져온 예시이며, 공식문서에 자세한 설명이 있으니 구체적인 커스텀 가이드가 필요할 경우 참고하시면 좋을 것 같습니다.
 
 Next.js 12.3 버전 이후로는 .env 파일 변경 시에도 핫 리로드가 가능하도록 확장되었으며, 이는 Next.js만의 독자적인 구현체입니다. 따라서 **React의 핵심 기술을 기반으로 하되, Next.js의 아키텍처에 맞춘 추가 최적화가 적용된 기능**이라고 할 수 있습니다.
 
-### 내가 겪은 HMR 문제 <a id="내가-겪은-hmr-문제"></a>
+### 실무에서 겪은 HMR 문제 <a id="실무에서-겪은-hmr-문제"></a>
 
 실무에서 겪은 문제로 Fast Refresh가 제대로 동작하지 않아 생산성에 큰 오류가 생긴 상태입니다. 지금은.. 코드 한 번 수정하면 해당 컴포넌트만 리렌더링되는 것이 아니라 페이지가 새로고침되어버리는 크나큰 이슈에 시달리는 상태 - -
 
-이 문제는 코드상으로 크리티컬 한 것이 아니라 개발 편의를 누리지 못하는 문제여서 에러가 아니라 경고 레벨의 로그를 남기고 있는데요. 먼저 웹 브라우저의 콘솔 창을 열어보면 다음과 같은 경고 메시지를 볼 수 있습니다.
+이 문제는 기능적인 에러는 아니지만, 개발 생산성을 저해하는 경고 로그를 남기고 있습니다. 특정 컴포넌트에서 코드를 변경하고 웹 브라우저의 콘솔 창을 열어보면 다음과 같은 경고 메시지를 만날 때가 있습니다.
 
 ![hmr-problem1](./hmr-problem1.png)
 
 이 경고가 뜨면 웹이 새로고침되듯 Full Reload가 됩니다.
+
 전체 리로드 한다 해도 초기 진입 시간이 짧다면 문제가 없지만, 저희 프로젝트의 경우 진입과 동시에 캐싱하지 않고 신규 데이터를 불러오는 상황이라 초기 진입 시간이 길어집니다. (비즈니스 상 이유로 캐싱을 사용하지 않고 있습니다.)
 
 그래서 매번 코드를 수정할 때마다 짧게는 5초, 길게는 10초 이상의 시간이 소요되곤 합니다.
@@ -143,7 +140,7 @@ Next.js 12.3 버전 이후로는 .env 파일 변경 시에도 핫 리로드가 �
 
 해결하기 위해 가장 먼저 Next.js의 공식문서를 확인해보았습니다. [Next.js - Fast Refresh](https://nextjs.org/docs/architecture/fast-refresh)에 따르면, Fast Refresh는 Next.js 9.4 버전부터 기본적으로 활성화되어 있으며, 특별한 설정이 필요하지 않다고 합니다.
 
-문서에서 소개하는 제한 사항은 다음과 같습니다.
+문서에서 소개하는 Fast Refresh의 제한 사항은 다음과 같습니다.
 
 - 비 React 파일 수정 (예: `utils.js`, 'config.js' 등)
 - React 컴포넌트 외부에서 상태를 변경하는 경우 (예: `useState`를 사용하지 않는 경우)
@@ -184,6 +181,12 @@ export default App
 Fast Refresh가 정상적으로 돌면 코드 수정에도 컴포넌트의 상태가 유지되게 되는데, 만약 애니메이션 등의 상태를 유지하고 싶지 않다면 `// @refresh reset` 주석을 추가하면 된다고 합니다.
 
 이로써 모두 해결한 것 같지만.. **진정한 Fast Refresh는 코드가 수정된 컴포넌트의 상태 또한 보존되어야 합니다.(즉, 리마운트되면 안됨)** 이 부분은 아직 해결하지 못한 상태이며, 이번에 학습한 내용을 바탕으로 추가적인 조사와 수정을 진행해보려 합니다.
+
+### 마무리하며 <a id="마무리하며"></a>
+
+다시 한 번 개발 생산성의 중요성을 느끼게 되었습니다. UI 작업으로 인해 코드의 단순 변경이 잦은 프론트엔드의 특성상, HMR과 같은 기능은 필수적인 요소라고 생각합니다. 한 컴포넌트를 작업하는데 100번의 저장을 필요로 한다고 가정할 때, 갱신 시간이 1초가 걸린다면 100초, 5초가 걸린다면 500초가 소요됩니다.
+
+이렇게 생산성이 떨어지는 상황을 방지하기 위해, HMR과 같은 기능을 활용하여 코드 수정 시 빠르게 반영되도록 하는 것이 중요합니다. 그리고 이를 위해 HMR, Hot Reload, Fast Refresh의 개념과 차이점을 이해하고, 실무에서 발생할 수 있는 문제를 미리 예방하는 것이 중요하다고 생각합니다.
 
 ---
 
