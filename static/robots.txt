@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://minssung.github.io/sitemap-index.xml
