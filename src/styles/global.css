@@ -11,6 +11,7 @@
   --blockquote-border: #27a9e3;
   --blockquote-bg: #f8fcff;
   --link-color: #0066cc;
+  --code-bg-color: #d4d4d4;
 
   /* Styling */
   --box-shadow-color: rgba(0, 0, 0, 0.2);
@@ -33,6 +34,7 @@
   --blockquote-border: #1a8fc7;
   --blockquote-bg: #1a1a1a;
   --link-color: #66b3ff;
+  --code-bg-color: #2f2f2f;
 
   /* Styling */
   --box-shadow-color: rgba(255, 255, 255, 0.8);
@@ -114,8 +116,9 @@ a {
 }
 
 code:not(:has(*)) {
-  color: #c7254e;
-  background-color: #d4d4d4;
+  color: #ff4141;
+  background-color: var(--code-bg-color);
+  font-family: 'Fira Code', monospace;
   padding: 0.1rem 0.3rem;
   border-radius: 3px;
   font-size: 0.9em;
