@@ -58,7 +58,7 @@ export default function Posts() {
     <div
       style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
         gap: '1.5rem',
       }}
     >
