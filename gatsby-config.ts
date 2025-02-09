@@ -33,6 +33,13 @@ const config: GatsbyConfig = {
             },
           },
           {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              target: '_blank',
+              rel: 'noopener noreferrer',
+            },
+          },
+          {
             resolve: 'gatsby-remark-vscode',
             options: {
               theme: 'Dark+ (default dark)',
