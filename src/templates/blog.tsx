@@ -4,6 +4,7 @@ import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 import Layout from '@components/layout';
 import { SEO } from '@components/seo';
+import Comments from '@components/comments';
 
 interface Query {
   data: {
@@ -49,6 +50,7 @@ export default function Template({ data }: Query) {
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
+        <Comments />
       </div>
     </Layout>
   );
