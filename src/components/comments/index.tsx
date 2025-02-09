@@ -16,7 +16,7 @@ const Comments = () => {
       'data-category-id': 'DIC_kwDOHMH5pc4Cmyu0',
       'data-mapping': 'pathname',
       'data-strict': '0',
-      'data-reactions-enabled': '0',
+      'data-reactions-enabled': '1',
       'data-emit-metadata': '0',
       'data-input-position': 'top',
       'data-theme': getTheme(),
@@ -41,7 +41,7 @@ const Comments = () => {
           );
           if (!iframe) return;
 
-          const theme = htmlElement.getAttribute('data-theme') || 'light';
+          const theme = getTheme();
           iframe.contentWindow?.postMessage(
             { giscus: { setConfig: { theme } } },
             'https://giscus.app',
