@@ -145,6 +145,10 @@ hr {
   margin-bottom: 2rem;
 }
 
+ul ul {
+  padding: 5px 10px;
+}
+
 #___gatsby {
   display: flex;
   justify-content: center;
