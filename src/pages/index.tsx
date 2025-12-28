@@ -36,4 +36,6 @@ export default ({ data, location }: HomePageQuery) => {
   );
 };
 
-export const Head = () => <SEO />;
+export const Head = ({ location }: HomePageQuery) => (
+  <SEO pathname={location.pathname} />
+);

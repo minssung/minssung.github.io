@@ -75,7 +75,10 @@ export const pageQuery = graphql`
   }
 `;
 
-export const Head = ({ data }: Query) => {
+export const Head = ({
+  data,
+  location,
+}: Query & { location: { pathname: string } }) => {
   const { markdownRemark: post } = data;
 
   return (
@@ -86,6 +89,7 @@ export const Head = ({ data }: Query) => {
         post.frontmatter.thumbnail?.childImageSharp?.gatsbyImageData?.images
           ?.fallback?.src ?? ''
       }
+      pathname={location.pathname}
     />
   );
 };
