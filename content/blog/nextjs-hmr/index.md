@@ -1,5 +1,5 @@
 ---
-path: '/nextjs-hmr'
+path: '/nextjs-hmr/'
 date: 2025-02-02
 title: 'Next.js를 다루며 - HMR, Fast Refresh 찍어 먹기'
 thumbnail: './hmr-thumbnail.png'

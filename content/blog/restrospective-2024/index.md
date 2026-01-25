@@ -1,5 +1,5 @@
 ---
-path: '/restrospective-2024'
+path: '/restrospective-2024/'
 date: 2025-01-05
 title: '도전적인 2024년 회고'
 thumbnail: './restrospective-2024-thumbnail.png'

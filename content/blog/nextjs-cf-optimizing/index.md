@@ -1,5 +1,5 @@
 ---
-path: "/nextjs-cf-optimizing"
+path: '/nextjs-cf-optimizing/'
 date: 2025-05-25
 title: "Next.js 정적 리소스를 S3 + CloudFront로 서빙하기: 비용 최적화"
 thumbnail: "./nextjs-cf-optimizing-thumbnail.png"

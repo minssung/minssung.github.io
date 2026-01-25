@@ -1,5 +1,5 @@
 ---
-path: '/what-is-best-article'
+path: '/what-is-best-article/'
 date: 2024-11-24
 title: '좋은 글이란 무엇인가에 대한 고찰'
 thumbnail: './best-article.png'

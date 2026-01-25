@@ -1,5 +1,5 @@
 ---
-path: '/restrospective-onedoit'
+path: '/restrospective-onedoit/'
 date: 2024-10-13
 title: 'AI 일기장 원두잇, 1년치 사이드 프로젝트 회고'
 thumbnail: './playstore.PNG'

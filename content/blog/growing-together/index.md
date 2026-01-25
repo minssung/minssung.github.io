@@ -1,5 +1,5 @@
 ---
-path: '/growing-together'
+path: '/growing-together/'
 date: 2025-02-16
 title: '함께 자라기 책과 함께 자라기'
 thumbnail: './growing-together-thumbnail.png'

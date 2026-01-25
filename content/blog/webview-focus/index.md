@@ -1,5 +1,5 @@
 ---
-path: '/webview-focus'
+path: '/webview-focus/'
 date: 2024-12-08
 title: '웹뷰에서 포커스를 감지하고 싶어요 - react-toastify 활용'
 thumbnail: './webview-focus-react-toastify.png'

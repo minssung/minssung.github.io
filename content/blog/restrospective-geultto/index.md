@@ -1,5 +1,5 @@
 ---
-path: '/restrospective-geultto'
+path: '/restrospective-geultto/'
 date: '2025-03-30'
 title: '글또 10기 회고'
 thumbnail: './restrospective-geultto-thumbnail.png'

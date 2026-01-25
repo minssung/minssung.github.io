@@ -1,5 +1,5 @@
 ---
-path: '/9oormthon'
+path: '/9oormthon/'
 date: 2024-11-10
 title: '구름톤 11기 후기 - 프론트엔드'
 thumbnail: './9oormthon.png'

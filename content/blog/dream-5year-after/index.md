@@ -1,5 +1,5 @@
 ---
-path: '/dream-5year-after'
+path: '/dream-5year-after/'
 date: 2025-03-16
 title: 올해, 그리고 5년 뒤 나의 꿈
 thumbnail: './dream-5year-after-thumbnail.png'

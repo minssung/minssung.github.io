@@ -21,13 +21,11 @@ export const SEO = ({
     siteUrl,
   } = useSiteMetadata();
 
-  const normalizedPath = pathname === '/' ? '/' : pathname?.replace(/\/$/, '');
-
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
-    url: `${siteUrl}${normalizedPath || ``}`,
+    url: `${siteUrl}${pathname || ``}`,
   };
 
   return (

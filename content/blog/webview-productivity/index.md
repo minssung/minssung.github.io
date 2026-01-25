@@ -1,5 +1,5 @@
 ---
-path: '/webview-productivity'
+path: '/webview-productivity/'
 date: 2025-03-02
 title: '생산성을 높이는 웹뷰 디버깅 - AOS'
 thumbnail: './webview-productivity-thumbnail.png'
